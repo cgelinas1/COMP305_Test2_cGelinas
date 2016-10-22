@@ -2,6 +2,10 @@
 using System.Collections;
 
 [System.Serializable]
+
+
+//COMP305 Test 1 - Christopher Gelinas - 300844877 - Last Modified By: Chris Gelinas - Date Created Oct 22 2016
+
 public class Speed {
 	public float minSpeed, maxSpeed;
 }

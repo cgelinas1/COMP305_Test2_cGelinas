@@ -3,6 +3,9 @@ using System.Collections;
 // reference to the UI namespace
 using UnityEngine.UI;
 
+//COMP305 Test 1 - Christopher Gelinas - 300844877 - Last Modified By: Chris Gelinas - Date Created Oct 22 2016
+
+
 
 public class GameController : MonoBehaviour {
     //PRIVATE INSTANCE VARIABLES
@@ -19,6 +22,7 @@ public class GameController : MonoBehaviour {
 	
     //PUBLIC PROPERTIES
 
+        //HullPoints(Lives for Player)
         public int HullPoints
     {
         get
@@ -30,7 +34,7 @@ public class GameController : MonoBehaviour {
             this.HullPoints = value;
             if (this._hullPoints <= 0)
             {
-
+                Destroy(this.gameObject);
             }
             else
             {
@@ -68,10 +72,22 @@ public class GameController : MonoBehaviour {
 	
 	}
 
-	// generate Clouds
-	private void _GenerateEnemies() {
-		for (int count=0; count < this.enemyCount; count++) {
-			Instantiate(enemy);
-		}
-	}
+    // generate Clouds
+    private void _GenerateEnemies() {
+        for (int count = 0; count < this.enemyCount; count++) {
+            Instantiate(enemy);
+        }
+    }
+          public void IncreaseScore(int increase)
+    {
+        HullPoints += increase;
+        //scoreText.text = "Score: " + score;
+    }
+
+    public void DecreaseLives(int decrease)
+    {
+        ScoreValue -= decrease;
+        //livesText.text = "Lives: " + lives;
+    }
 }
+
