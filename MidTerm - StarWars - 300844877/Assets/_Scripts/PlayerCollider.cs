@@ -12,7 +12,7 @@ public class PlayerCollider : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("TIE Fighter"))
+        if (other.gameObject.CompareTag("Enemy"))
         {
             this._gameController.HullPoints -= 1;
         }
